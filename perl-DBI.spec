@@ -1,6 +1,6 @@
 %define module	DBI
 %define name	perl-%{module}
-%define version	1.54
+%define version	1.56
 %define release	%mkrel 1
 
 Summary:	The Perl Database Interface
@@ -81,6 +81,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc Changes README Roadmap.pod TASKS.pod
 %{_bindir}/dbiprof
+%{_bindir}/dbilogstrip
 %{_mandir}/*/*
 %exclude %{_mandir}/man1/dbiproxy.1*
 %exclude %{_mandir}/man3*/DBD::Proxy.3pm*
@@ -88,6 +89,7 @@ rm -rf %{buildroot}
 %exclude %{_mandir}/man3*/DBI::ProfileDumper::Apache.3pm*
 %{perl_vendorarch}/Bundle
 %{perl_vendorarch}/DBD
+%{perl_vendorarch}/goferperf.pl
 %exclude %{perl_vendorarch}/DBD/Proxy.pm
 %{perl_vendorarch}/DBI.pm
 %{perl_vendorarch}/DBI
@@ -108,6 +110,3 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{perl_vendorarch}/DBI/ProfileDumper
 %{_mandir}/man3*/DBI::ProfileDumper::Apache.3pm.*
-
-
-
