@@ -1,6 +1,6 @@
 %define module	DBI
 %define name	perl-%{module}
-%define version	1.58
+%define version	1.59
 %define release	%mkrel 1
 
 Summary:	The Perl Database Interface
@@ -89,7 +89,6 @@ rm -rf %{buildroot}
 %exclude %{_mandir}/man3*/DBI::ProfileDumper::Apache.3pm*
 %{perl_vendorarch}/Bundle
 %{perl_vendorarch}/DBD
-%{perl_vendorarch}/goferperf.pl
 %{perl_vendorarch}/dbixs_rev.pl
 %exclude %{perl_vendorarch}/DBD/Proxy.pm
 %{perl_vendorarch}/DBI.pm
