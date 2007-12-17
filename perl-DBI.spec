@@ -16,7 +16,6 @@ BuildRequires:	perl-devel
 BuildRequires:	perl(Storable) >= 1
 BuildRequires:	perl(Test::Simple) >= 0.4
 
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The Perl Database Interface (DBI) is a database access Application Programming
