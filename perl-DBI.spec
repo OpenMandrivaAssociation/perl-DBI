@@ -1,6 +1,6 @@
 %define module	DBI
 %define name	perl-%{module}
-%define version	1.608
+%define version	1.609
 %define release	%mkrel 1
 
 Summary:	The Perl Database Interface
