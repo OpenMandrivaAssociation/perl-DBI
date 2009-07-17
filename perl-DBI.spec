@@ -1,22 +1,21 @@
-%define module	DBI
-%define name	perl-%{module}
-%define version	1.609
-%define release	%mkrel 1
+%define upstream_name	 DBI
+%define upstream_version 1.609
+
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	%mkrel 2
 
 Summary:	The Perl Database Interface
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 License:	GPL
 Group:		Development/Perl
-Requires:	perl
 URL:		http://dbi.perl.org/
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/DBI/%{module}-%{version}.tar.bz2
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/DBI/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:	perl-devel
 BuildRequires:	perl(Storable) >= 1
-BuildRequires:	perl(Test::Simple) >= 0.4
-
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires:	perl(Test::Simple) >= 0.400.0
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
+Requires:	perl
 
 %description
 The Perl Database Interface (DBI) is a database access Application Programming
@@ -48,7 +47,7 @@ process. These files are created in your Apache log directory. You can
 then use dbiprof to analyze the profile files.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -110,3 +109,4 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{perl_vendorarch}/DBI/ProfileDumper
 %{_mandir}/man3*/DBI::ProfileDumper::Apache.3pm.*
+
