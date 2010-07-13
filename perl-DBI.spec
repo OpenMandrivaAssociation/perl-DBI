@@ -1,21 +1,21 @@
 %define upstream_name	 DBI
-%define upstream_version 1.609
+%define upstream_version 1.611
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 2
+Release:	%mkrel 1
 
 Summary:	The Perl Database Interface
 License:	GPL
 Group:		Development/Perl
 URL:		http://dbi.perl.org/
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/DBI/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/DBI/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires:	perl-devel
 BuildRequires:	perl(Storable) >= 1
 BuildRequires:	perl(Test::Simple) >= 0.400.0
+BuildRequires:	perl-devel
+
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
-Requires:	perl
 
 %description
 The Perl Database Interface (DBI) is a database access Application Programming
