@@ -1,9 +1,9 @@
 %define upstream_name	 DBI
-%define upstream_version 1.611
+%define upstream_version 1.613
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 3
+Release:	%mkrel 1
 
 Summary:	The Perl Database Interface
 License:	GPL
