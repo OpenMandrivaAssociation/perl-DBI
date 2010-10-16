@@ -1,9 +1,9 @@
 %define upstream_name	 DBI
-%define upstream_version 1.613
+%define upstream_version 1.615
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 2
+Release:	%mkrel 1
 
 Summary:	The Perl Database Interface
 License:	GPL
@@ -78,7 +78,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc Changes README Roadmap.pod TASKS.pod
+%doc Changes README
 %{_bindir}/dbiprof
 %{_bindir}/dbilogstrip
 %{_mandir}/*/*
