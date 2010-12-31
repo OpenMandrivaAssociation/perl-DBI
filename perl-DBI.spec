@@ -1,5 +1,5 @@
 %define upstream_name	 DBI
-%define upstream_version 1.615
+%define upstream_version 1.616
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
@@ -108,5 +108,6 @@ rm -rf %{buildroot}
 %files ProfileDumper-Apache
 %defattr(-,root,root)
 %{perl_vendorarch}/DBI/ProfileDumper
+%{perl_vendorarch}/DBI/ProfileDumper.pm
 %{_mandir}/man3*/DBI::ProfileDumper::Apache.3pm.*
 
