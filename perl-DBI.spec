@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 1
+Release:	%mkrel 2
 
 Summary:	The Perl Database Interface
 License:	GPL
@@ -78,7 +78,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc Changes README
+%doc Changes README META.yml
 %{_bindir}/dbiprof
 %{_bindir}/dbilogstrip
 %{_mandir}/*/*
