@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 3
+Release:	4
 
 Summary:	The Perl Database Interface
 License:	GPL
@@ -13,9 +13,8 @@ Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/DBI/%{upstream_name}-%{up
 
 BuildRequires:	perl(Storable) >= 1
 BuildRequires:	perl(Test::Simple) >= 0.400.0
-BuildRequires:	perl-devel
-
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel >= 2:5.14
+BuildRequires:	perl-List-MoreUtils >= 0.320.0-3
 
 %description
 The Perl Database Interface (DBI) is a database access Application Programming
@@ -93,6 +92,7 @@ rm -rf %{buildroot}
 %{perl_vendorarch}/DBI.pm
 %{perl_vendorarch}/DBI
 %exclude %{perl_vendorarch}/DBI/ProfileDumper
+%exclude %{perl_vendorarch}/DBI/ProfileDumper.pm
 %exclude %{perl_vendorarch}/DBI/ProxyServer.pm
 %{perl_vendorarch}/auto/DBI
 
