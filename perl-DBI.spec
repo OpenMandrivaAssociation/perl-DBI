@@ -1,15 +1,15 @@
-%define upstream_name	 DBI
-%define upstream_version 1.616
+%define	module	DBI
+%define	modver	1.616
 
-Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	9
+Name:		perl-%{module}
+Version:	%{perl_convert_version %{modver}}
+Release:	10
 
 Summary:	The Perl Database Interface
 License:	GPL
 Group:		Development/Perl
 URL:		http://dbi.perl.org/
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/DBI/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/DBI/%{module}-%{modver}.tar.gz
 
 BuildRequires:	perl(Storable) >= 1
 BuildRequires:	perl(Test::Simple) >= 0.400.0
@@ -46,15 +46,15 @@ process. These files are created in your Apache log directory. You can
 then use dbiprof to analyze the profile files.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{module}-%{modver}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-%__make CFLAGS="%{optflags}"
+perl Makefile.PL INSTALLDIRS=vendor
+%make CFLAGS="%{optflags}"
 
 %check
 rm -f t/zvg_85gofer
-%__make test
+%make test
 
 %install
 %makeinstall_std
@@ -110,6 +110,10 @@ rm -f %{buildroot}%{perl_vendorarch}/DBD/Gofer/Transport/corostream.pm
 
 
 %changelog
+* Wed Dec 19 2012 Per Øyvind Karlsen <peroyvind@mandriva.org> 1.980.0-10
+- rebuild for new perl 5.16.2
+- cleanups
+
 * Sun Jan 22 2012 Oden Eriksson <oeriksson@mandriva.com> 1.616.0-7
 + Revision: 765165
 - rebuilt for perl-5.14.2
