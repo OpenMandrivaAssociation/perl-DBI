@@ -4,7 +4,7 @@
 Summary:	The Perl Database Interface
 Name:		perl-%{module}
 Version:	%{perl_convert_version %{modver}}
-Release:	12
+Release:	13
 License:	GPL
 Group:		Development/Perl
 URL:		http://dbi.perl.org/
