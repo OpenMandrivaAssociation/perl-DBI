@@ -1,14 +1,16 @@
-%define	module	DBI
-%define	modver	1.616
+%define upstream_name	 DBI
+%define upstream_version 1.631
+
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	1
 
 Summary:	The Perl Database Interface
-Name:		perl-%{module}
-Version:	%{perl_convert_version %{modver}}
-Release:	15
 License:	GPL
 Group:		Development/Perl
 URL:		http://dbi.perl.org/
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/DBI/%{module}-%{modver}.tar.gz
+Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/DBI/DBI-%{upstream_version}.tar.gz
+Source1:	%{name}.rpmlintrc
 
 BuildRequires:	perl(Storable) >= 1
 BuildRequires:	perl(Test::Simple) >= 0.400.0
@@ -45,15 +47,15 @@ process. These files are created in your Apache log directory. You can
 then use dbiprof to analyze the profile files.
 
 %prep
-%setup -q -n %{module}-%{modver}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-perl Makefile.PL INSTALLDIRS=vendor
-%make CFLAGS="%{optflags}"
+%{__perl} Makefile.PL INSTALLDIRS=vendor
+%__make CFLAGS="%{optflags}"
 
 %check
 rm -f t/zvg_85gofer
-%make test
+%__make test
 
 %install
 %makeinstall_std
@@ -74,7 +76,7 @@ rm -f %{buildroot}%{_mandir}/man3*/TASKS.3pm*
 rm -f %{buildroot}%{perl_vendorarch}/DBD/Gofer/Transport/corostream.pm
 
 %files
-%doc Changes README META.yml
+%doc Changes  META.yml
 %{_bindir}/dbiprof
 %{_bindir}/dbilogstrip
 %{_mandir}/*/*
@@ -105,4 +107,3 @@ rm -f %{buildroot}%{perl_vendorarch}/DBD/Gofer/Transport/corostream.pm
 %{perl_vendorarch}/DBI/ProfileDumper
 %{perl_vendorarch}/DBI/ProfileDumper.pm
 %{_mandir}/man3*/DBI::ProfileDumper::Apache.3pm.*
-
