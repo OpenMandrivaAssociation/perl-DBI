@@ -1,15 +1,15 @@
 %define upstream_name	 DBI
-%define upstream_version 1.631
+%define upstream_version 1.632
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	6
+Release:	1
 
 Summary:	The Perl Database Interface
 License:	GPL
 Group:		Development/Perl
 URL:		http://dbi.perl.org/
-Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/DBI/DBI-%{upstream_version}.tar.gz
+Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/%{upstream_name}/%{upstream_name}-%{upstream_version}.tar.gz
 Source1:	%{name}.rpmlintrc
 
 BuildRequires:	perl(Storable) >= 1
@@ -50,7 +50,7 @@ then use dbiprof to analyze the profile files.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %__make CFLAGS="%{optflags}"
 
 %check
