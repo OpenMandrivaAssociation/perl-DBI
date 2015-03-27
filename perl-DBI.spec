@@ -1,5 +1,5 @@
 %define upstream_name	 DBI
-%define upstream_version 1.632
+%define upstream_version 1.633
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
