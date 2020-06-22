@@ -1,9 +1,9 @@
 %define upstream_name	 DBI
-%define upstream_version 1.642
+%define upstream_version 1.643
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 
 Summary:	The Perl Database Interface
 License:	GPL
@@ -47,18 +47,18 @@ process. These files are created in your Apache log directory. You can
 then use dbiprof to analyze the profile files.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%autosetup -n %{upstream_name}-%{upstream_version} -p1
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
-%__make CFLAGS="%{optflags}"
+%make_build CFLAGS="%{optflags}"
 
 %check
 rm -f t/zvg_85gofer
-%__make test
+make test
 
 %install
-%makeinstall_std
+%make_install
 
 # remove Win32 stuff
 rm -rf %{buildroot}%{perl_vendorarch}/Win32
