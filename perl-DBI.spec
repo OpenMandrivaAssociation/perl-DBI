@@ -1,5 +1,9 @@
 %define upstream_name	 DBI
 %define upstream_version 1.643
+%ifarch %{x86_64}
+# FIXME workaround debuginfo generator bug
+%global _debugsource_template %{nil}
+%endif
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
