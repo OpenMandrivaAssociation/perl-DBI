@@ -12,7 +12,7 @@ Release:	5
 Summary:	The Perl Database Interface
 License:	GPL
 Group:		Development/Perl
-URL:		http://dbi.perl.org/
+URL:		https://dbi.perl.org/
 Source0:	http://search.cpan.org/CPAN/modules/by-module/%{upstream_name}/%{upstream_name}-%{upstream_version}.tar.gz
 Source1:	%{name}.rpmlintrc
 
