@@ -1,19 +1,14 @@
 %define upstream_name	 DBI
-%define upstream_version 1.643
-%ifarch %{x86_64}
-# FIXME workaround debuginfo generator bug
-%global _debugsource_template %{nil}
-%endif
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	1.645
+Release:	1
 
 Summary:	The Perl Database Interface
 License:	GPL
 Group:		Development/Perl
 URL:		https://dbi.perl.org/
-Source0:	http://search.cpan.org/CPAN/modules/by-module/%{upstream_name}/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	https://search.cpan.org/CPAN/modules/by-module/%{upstream_name}/%{upstream_name}-%{version}.tgz
 Source1:	%{name}.rpmlintrc
 
 BuildRequires:	perl(Storable) >= 1
@@ -51,7 +46,7 @@ process. These files are created in your Apache log directory. You can
 then use dbiprof to analyze the profile files.
 
 %prep
-%autosetup -n %{upstream_name}-%{upstream_version} -p1
+%autosetup -n %{upstream_name}-%{version} -p1
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
