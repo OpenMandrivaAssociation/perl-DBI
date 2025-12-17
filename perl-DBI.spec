@@ -2,7 +2,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	1.645
-Release:	1
+Release:	2
 
 Summary:	The Perl Database Interface
 License:	GPL
