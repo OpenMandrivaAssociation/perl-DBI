@@ -11,6 +11,7 @@ URL:		https://dbi.perl.org/
 Source0:	https://search.cpan.org/CPAN/modules/by-module/%{upstream_name}/%{upstream_name}-%{version}.tgz
 Source1:	%{name}.rpmlintrc
 
+BuildRequires:	make
 BuildRequires:	perl(Storable) >= 1
 BuildRequires:	perl(Test::Simple) >= 0.400.0
 BuildRequires:	perl-devel >= 2:5.14
