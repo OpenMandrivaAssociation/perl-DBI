@@ -1,14 +1,14 @@
 %define upstream_name	 DBI
 
 Name:		perl-%{upstream_name}
-Version:	1.645
-Release:	2
+Version:	1.651
+Release:	1
 
 Summary:	The Perl Database Interface
 License:	GPL
 Group:		Development/Perl
-URL:		https://dbi.perl.org/
-Source0:	https://search.cpan.org/CPAN/modules/by-module/%{upstream_name}/%{upstream_name}-%{version}.tgz
+URL:		http://dbi.perl.org
+Source0:	https://cpan.metacpan.org/authors/id/H/HM/HMBRAND/%{upstream_name}-%{version}.tgz
 Source1:	%{name}.rpmlintrc
 
 BuildRequires:	make
