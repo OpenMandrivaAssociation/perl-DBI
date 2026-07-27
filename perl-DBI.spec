@@ -2,7 +2,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	1.651
-Release:	2
+Release:	3
 
 Summary:	The Perl Database Interface
 License:	GPL
@@ -76,7 +76,7 @@ rm -f %{buildroot}%{_mandir}/man3*/TASKS.3pm*
 rm -f %{buildroot}%{perl_vendorarch}/DBD/Gofer/Transport/corostream.pm
 
 %files
-%doc Changes  META.yml
+%doc ChangeLog README.md META.yml LICENSE
 %{_bindir}/dbiprof
 %{_bindir}/dbilogstrip
 %{_mandir}/*/*
