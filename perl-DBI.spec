@@ -1,7 +1,7 @@
 %define upstream_name	 DBI
 
 Name:		perl-%{upstream_name}
-Version:	1.653
+Version:	1.655
 Release:	1
 
 Summary:	The Perl Database Interface
